@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Android_crud_app"
         tools:targetApi="31">
         <activity
+            android:name=".activity_add"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
