@@ -5,6 +5,7 @@ plugins {
 android {
     namespace 'com.example.android_crud_app'
     compileSdk 33
+    compileSdkVersion 34
 
     defaultConfig {
         applicationId "com.example.android_crud_app"

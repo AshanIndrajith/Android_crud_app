@@ -6,7 +6,7 @@ public class Employee {
     private String dep;
     private String salary;
 
-    public Employee(int id, String name, String dep, String salary) {
+    public Employee(String name, String dep, String salary) {
         this.id = id;
         this.name = name;
         this.dep = dep;
