@@ -1,8 +1,11 @@
 package com.example.android_crud_app;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.time.temporal.Temporal;
 
 public class DBHandler extends SQLiteOpenHelper {
 
@@ -24,5 +27,17 @@ public class DBHandler extends SQLiteOpenHelper {
         String sql="DROP TABLE IF EXISTS employee_details;" ;
         sqLiteDatabase.execSQL(sql);
         onCreate(sqLiteDatabase);
+    }
+
+    public void addEmployee(Employee employee){
+
+        SQLiteDatabase sqLiteDatabase=getWritableDatabase();
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("name",employee.getName());
+        contentValues.put("dep",employee.getDep());
+        contentValues.put("salary",employee.getSalary());
+        sqLiteDatabase.insert("employee",null,contentValues);
+        sqLiteDatabase.close();
+
     }
 }
